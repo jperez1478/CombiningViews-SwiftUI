@@ -13,4 +13,12 @@ This project will have two views combine
 3. HZ View with tittle of landmark and where is location is 
 
 -------------------------------------
+## Dark Mode
 ![Screen Shot 2021-11-20 at 2 14 46 AM](https://user-images.githubusercontent.com/61983873/142719493-c8a66340-76a2-4d66-b06e-7976e6015989.png)
+
+
+------------------------
+## Light Mode
+
+
+![Screen Shot 2021-11-20 at 2 16 32 AM](https://user-images.githubusercontent.com/61983873/142719555-e45248cc-f277-406a-bffb-cedc78c89560.png)
