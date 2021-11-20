@@ -19,7 +19,7 @@ struct ContentView: View {
             CircleImage()
                 .offset(y: -130)
                 .padding(.bottom, -130)
-             VStack(alignment: .leading) { ///leading when u want it to the left
+            VStack(alignment: .leading) { ///leading when u want it to the left
                 Text("Cumberland River")
                     .font(.title)
                 HStack {
@@ -30,30 +30,36 @@ struct ContentView: View {
                     Text("Nashville")
                         .font(.subheadline)
                 }
-                 ZStack {
-                     Capsule()
-                         .frame(height: 80)
-                         .foregroundColor(Color(.secondarySystemBackground))
-                     HStack(spacing:50) {
-                         Button {
-                             
-                         } label: {
-                             LocationActionButton(color: .red, imageName: "location.fill")
-                         
-                         }
-                         Button {
-                             
-                         } label: {
-                             LocationActionButton(color: .red, imageName: "play")
-                         }
-                         Button {
-                             
-                         } label: {
-                             LocationActionButton(color: .red, imageName: "stop")
-                     
-                         }
-                     }
-                 }
+                ZStack {
+                    Capsule()
+                        .frame(height: 80)
+                        .foregroundColor(Color(.secondarySystemBackground))
+                    HStack(spacing: 20) {
+                        Button {
+                            
+                        } label: {
+                            LocationActionButton(color: .red, imageName: "location.fill")
+                            
+                        }
+                        Button {
+                            
+                        } label: {
+                            LocationActionButton(color: .red, imageName: "play")
+                        }
+                        Button {
+                            
+                        } label: {
+                            LocationActionButton(color: .red, imageName: "stop")
+                        }
+                        Button {
+                            
+                        } label: {
+                            LocationActionButton(color: .red, imageName: "plus")
+                            
+                            
+                        }
+                    }
+                }
                 
             } //: vsatck
             .padding(.horizontal)
@@ -61,13 +67,16 @@ struct ContentView: View {
             Text("Important People In this Event ")
                 .bold()
                 .font(.title2)
-           
-            LazyVGrid(columns: avatars, content: {
-                AvatarView(imageName: "person",size: 64)
-                AvatarView(imageName: "person",size: 64)
-                AvatarView(imageName: "person",size: 64)
-                AvatarView(imageName: "person",size: 64)
-            })
+            ScrollView {
+                LazyVGrid(columns: avatars, content: {
+                    FirstNameAvatarView(firstName: "Jessica")
+                    FirstNameAvatarView(firstName: "Jessica")
+                    
+                    
+                    
+                    
+                })
+            }
             
             Spacer()
             
@@ -112,6 +121,22 @@ struct AvatarView: View {
             .resizable()
             .scaledToFit()
             .frame(width: size, height: size)
-           /// .clipShape(Circle())
+        /// .clipShape(Circle())
     }
 }
+
+struct FirstNameAvatarView: View {
+    var firstName:String
+    
+    var body: some View{
+        VStack {
+            AvatarView(imageName: "person",size: 64)
+            
+            Text(firstName)
+                .bold()
+                .lineLimit(1)
+                .minimumScaleFactor(0.1)
+        }
+    }
+}
+
