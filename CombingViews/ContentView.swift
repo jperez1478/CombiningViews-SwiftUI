@@ -9,8 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ///leading when u want it to the left
+        VStack(alignment: .leading) {
+            Text("Cumberland River")
+                .font(.title)
+            HStack {
+                Text("Dowton Civil War")
+                    .font(.subheadline)
+                ///space between text
+                Spacer()
+                Text("Nashville")
+                    .font(.subheadline)
+            }
+            
+        } //: vsatck
+        .padding()
+        
     }
 }
 
