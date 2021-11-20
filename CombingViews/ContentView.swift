@@ -9,21 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ///leading when u want it to the left
-        VStack(alignment: .leading) {
-            Text("Cumberland River")
-                .font(.title)
-            HStack {
-                Text("Dowton Civil War")
-                    .font(.subheadline)
-                ///space between text
-                Spacer()
-                Text("Nashville")
-                    .font(.subheadline)
-            }
-            
-        } //: vsatck
-        .padding()
+        ///combining views so embeded the lower vstack in another vstack (line: 12)
+        VStack {
+            MapView()
+                .frame(height: 300)
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+             VStack(alignment: .leading) { ///leading when u want it to the left
+                Text("Cumberland River")
+                    .font(.title)
+                HStack {
+                    Text("Dowton Civil War")
+                        .font(.subheadline)
+                    ///space between text
+                    Spacer()
+                    Text("Nashville")
+                        .font(.subheadline)
+                }
+                
+            } //: vsatck
+            .padding()
+            Spacer()
+        }
         
     }
 }
